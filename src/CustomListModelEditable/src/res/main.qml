@@ -5,19 +5,21 @@ import QtQuick.Layouts 1.2
 import ExampleItemEditable 0.1
 ApplicationWindow {
     visible: true
-    width: 600
-    height: 400
+    width: 1200
+    height: 800
     title: qsTr("Editable Custom List Model")
 
     Frame{
         width: parent.width
         height: parent.height
         anchors.top: parent.top
+        focus: true
 
         ListView {
             id: list
             anchors.fill: parent
             clip: true
+            focus: true
             visible: true
 
             model: ExampleItemModelEditable {}
@@ -26,7 +28,6 @@ ApplicationWindow {
                 width: parent.width
                 height: 100
                 color: index == list.currentIndex ? "grey": "white"
-                focus: index == 0
                 
                 Keys.onUpPressed: list.currentIndex = Math.max(0,list.currentIndex-1)
                 Keys.onDownPressed: list.currentIndex = Math.min(list.count-1, list.currentIndex+1)

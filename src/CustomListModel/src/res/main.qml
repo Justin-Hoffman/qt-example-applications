@@ -5,25 +5,37 @@ import QtQuick.Layouts 1.2
 import ExampleItem 0.1
 ApplicationWindow {
     visible: true
-    width: 600
-    height: 400
+    width: 1200
+    height: 800
     title: qsTr("Example Custom List Model")
 
     Frame{
         width: parent.width
         height: parent.height
         anchors.top: parent.top
+        focus: true
 
         ListView {
+            id: list
             anchors.fill: parent
             visible: true
             clip: true
+            focus: true
 
             model: ExampleItemModel {}
 
             delegate: Rectangle {
                 width: parent.width
                 height: 100
+                color: index == list.currentIndex ? "grey": "white"
+
+                MouseArea {
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: list.currentIndex = index
+                    Keys.onUpPressed: list.decrementCurrentIndex()
+                    Keys.onDownPressed: list.incrementCurrentIndex()
+                }
 
                 Text{
                     id: name
