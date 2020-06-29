@@ -15,6 +15,11 @@ enable_testing()
 add_subdirectory(src/ExampleTemplateLib)
 add_subdirectory(src/ExampleTemplate)
 add_subdirectory(src/CustomListModel)
+add_subdirectory(src/CustomListModelEditable)
+#add_subdirectory(src/QMLSingleton) TODO: Instantiate a C++ singleton via QML. Read/write Q_PROPERTY to singles from multiple forms
+#add_subdirectory(src/DeviceLocalStorage) TODO: Store persistent application data in device local storage
+#add_subdirectory(src/StackedEditForm) TODO: Based on custom list view above but stack an edit form to edit the application
+#add_subdirectory(src/DynamicViewContainer) TODO: Split views across multiple containers dynamically when enough window real estate is available
 
 find_package(Git)
 if (GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
