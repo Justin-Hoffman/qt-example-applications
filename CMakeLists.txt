@@ -16,10 +16,12 @@ add_subdirectory(src/ExampleTemplateLib)
 add_subdirectory(src/ExampleTemplate)
 add_subdirectory(src/CustomListModel)
 add_subdirectory(src/CustomListModelEditable)
-#add_subdirectory(src/QMLSingleton) TODO: Instantiate a C++ singleton via QML. Read/write Q_PROPERTY to singles from multiple forms
+add_subdirectory(src/CppQMLSingleton) #TODO: Instantiate a C++ singleton via QML. Read/write Q_PROPERTY to singles from multiple forms
+#add_subdirectory(src/ThreadCallback) #TODO: Perform work in a separate thread with callback on completion
 #add_subdirectory(src/DeviceLocalStorage) TODO: Store persistent application data in device local storage
 #add_subdirectory(src/StackedEditForm) TODO: Based on custom list view above but stack an edit form to edit the application
 #add_subdirectory(src/DynamicViewContainer) TODO: Split views across multiple containers dynamically when enough window real estate is available
+#add_subdirectory(src/MultipleListViews) TODO: An example showing multiple list views where the second list data is replaced by a selection from the first
 
 find_package(Git)
 if (GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")

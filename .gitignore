@@ -4,6 +4,9 @@
 build/*
 build-android/*
 
+# Swap files
+*.swp
+
 # Prerequisites
 *.d
 
