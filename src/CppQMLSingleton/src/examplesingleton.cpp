@@ -10,3 +10,14 @@ void ExampleSingleton::setName( const QString &name ) {
     emit nameChanged( name );
   }
 }
+
+QString ExampleSingleton::color() const {
+  return QString::fromUtf8(_mColor.data(), _mColor.size());
+}
+
+void ExampleSingleton::setColor( const QString &color ) {
+  if ( _mColor != color.toStdString() ){
+    _mColor = color.toStdString();
+    emit colorChanged( color );
+  }
+}

@@ -10,11 +10,9 @@ find_package(Qt5 REQUIRED COMPONENTS Widgets Qml Quick )
 add_executable(CppQMLSingleton ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 set(CUSTOMLISTMODELEDITABLE_QTSOURCES
-   ${CMAKE_CURRENT_SOURCE_DIR}/src/exampleitemmodeleditable.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/src/examplesingleton.cpp
 )
 qt5_wrap_cpp(CUSTOMLISTMODELEDITABLE_QTSOURCES
-   ${CMAKE_CURRENT_SOURCE_DIR}/include/exampleitemmodeleditable.h
    ${CMAKE_CURRENT_SOURCE_DIR}/include/examplesingleton.h
 )
 
